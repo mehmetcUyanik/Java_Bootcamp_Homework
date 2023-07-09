@@ -9,13 +9,28 @@ import java.util.*;
 public class Main{
     public static void main(String[] args) {
 
+        /*
+        Kullanıcıdan veri alabilmek için Scanner sınıfından bir obje oluşturuldu.
+        Kodumuz while döngüsü içerisinde döndüğü için istediğimiz zaman döngüyü bozabilmek adına bir boolean değişkeni
+        tanımlandı.
+        while döngüsü içersindeki switch caselerimizi kontrol edebilmek adına iki tane int değişkeni oluşturuldu.
+        Kullanıcıdan veriler alarak oluşturacağımız Film objelerini depolamak için "FilmList" adında bir ArrayList oluşturuldu.
+         */
+
         Scanner input = new Scanner(System.in);
         boolean flag = true;
-
         int control;
         int controlAdmin;
 
         List <Film> FilmList = new ArrayList<>();
+
+        /*
+        Kullanıcının oluşturacağı kategori ve platformları depolamak için iki tane ArrayList oluşturuldu.
+        Aşağıda ArrayListlere girilen değerler tamamen kodun çalışabilirdiğini denerken kolaylık sağlaması adına eklenmiştir.
+        Uygulama içerisinde zaten kullanıcıdan alınacak bilgilerle sıfırdan kategori ve platform oluşturulabilmektedir.
+        Ekstradan aşağıda girilen verilerin bir kısmının ya da tamamının silinmesi veya veri eklenmesi uygulamanın uygun
+        bir şekilde çalışmasını engellememektedir.
+         */
 
         ArrayList<String> platformList = new ArrayList<>();
         platformList.add("Netflix");
@@ -51,24 +66,32 @@ public class Main{
                     switch (controlAdmin){
 
                         case 1:
+                           /* Bu kısımında kullanıcı verileri ile yukarıdaki kategori listesine
+                             yeni kategori eklenebilmektedir.
+                             */
+
                             input.nextLine();
                             System.out.println("Eklenecek Kategorinin Adını Giriniz: ");
                            String newCatName = input.nextLine();
                            categoryList.add(newCatName);
 
-
                             break;
 
                         case 2:
+                            /* Bu kısımında kullanıcı verileri ile yukarıdaki platform listesine
+                             yeni platform eklenebilmektedir.
+                             */
+
                             input.nextLine();
                             System.out.println("Eklenecek Platformun Adını Giriniz: ");
                             String newPlatName = input.nextLine();
                             platformList.add(newPlatName);
 
-
                             break;
 
                         case 3:
+                            // Bu kısımda oluşturulacak yeni Film objesi için kullanıcıdan veriler alınmaktadır.
+
                             System.out.println("Filmin kategorisini seçin :");
                             for (int i=0;i<categoryList.size();i++){
                                 System.out.println((i+1)+"-"+categoryList.get(i));
@@ -92,7 +115,21 @@ public class Main{
                             input.nextLine();
                             System.out.println("Filmin süresini giriniz :");
                             String runtimeInp = input.nextLine();
+
+                            /* Kullanıcıdan alınan veriler ile Film sınıfında oluşturulan Constructor alanları
+                            dolduruluyor ve yeni Film objemiz oluşturuluyor.
+                             */
+
                             Film newFilm = new Film(nameInp,yearInp,directorInp,imdbInp,runtimeInp);
+
+                            /* Yukarıda kullanıcıdan aldığımız kategori bilgisini kategori objemizde kullanabilmek için
+                            bir kategori objesi oluşturuyoruz. "setCategoryName" methodu ile kullanıcının girdiği kategoriyi
+                            objemize tanımlıyoruz.
+
+                            Aynı zamanda bu kategori bilgisini oluşturduğumuz Film objesine de tanımlamak için bir
+                            ArrayList oluşturup depoluyoruz. Çünkü Film sınıfımız içerisinde tanımladığımız
+                            "setCatArrayList" methodu parametre olarak ArrayList kabul ediyor.
+                             */
 
                             Category tempCat = new Category();
                             tempCat.setCategoryName(categoryList.get(catNum-1));
@@ -100,33 +137,54 @@ public class Main{
                             tempCatList.add(tempCat);
                             newFilm.setCatArrayList(tempCatList);
 
+                            /* Yukarıda kullanıcıdan aldığımız platform bilgisini platform objemizde kullanabilmek için
+                            bir platform objesi oluşturuyoruz. "setPlatformName" methodu ile kullanıcının girdiği platformu
+                            objemize tanımlıyoruz.
+
+                            Aynı zamanda bu platform bilgisini oluşturduğumuz Film objesine de tanımlamak için bir
+                            ArrayList oluşturup depoluyoruz. Çünkü Film sınıfımız içerisinde tanımladığımız
+                            "setPlatArrayList" methodu parametre olarak ArrayList kabul ediyor.
+                             */
+
                             Platform tempPlat = new Platform();
                             tempPlat.setPlatformName(platformList.get(platNum-1));
                             ArrayList <Platform> tempPlatList = new ArrayList<>();
                             tempPlatList.add(tempPlat);
-                            newFilm.setPlayArrayList(tempPlatList);
+                            newFilm.setPlatArrayList(tempPlatList);
+
+                            //Son olarak oluşturulan yeni filmimizi film listemize ekliyoruz.
 
                             FilmList.add(newFilm);
 
-
-
                             System.out.println("Film başarıyla oluşturuldu...");
 
-
                             break;
-
 
                     }
                     break;
 
                     case 2:
+                        // "categoryList" içerisinde tanımlanan kategoriler listeleniyor.
+
                         System.out.println("Filmleri Görmek İçin Kategori Seçiniz.");
                         for (int i=0;i<categoryList.size();i++){
                             System.out.println((i+1)+"-"+categoryList.get(i));
                         }
                         int userChoice = input.nextInt();
-                        System.out.println(categoryList.get(userChoice-1)+" kategorisindeki filmler :");
 
+                        /*
+                        Kullanıcı Scanner ile kategori seçtikten sonra seçilen kategoriye ait filmleri getirebilmek
+                        için iç içe bir for each yapısı kullanıldı. İlk for each yapısında FilmList içerisindeki
+                        film objelerine ulaşıldı. İkinci for each yapısında ise kategori objelerini tutan
+                        "getCatArrayList" içerisindeki kategorilere ulaşıldı. if yapısı ile de kullanıcının
+                        seçtiği kategori adına eşit olan filmler listelendi.
+
+                        Son olarak oluştulan ve sıfır olarak tanımlanan "count" değişkeni bu döngüler içerisinde
+                        seçilen kategoriye ait her film bulunduğunda bir arttı. Film bilgileri yazdırıldıktan sonra
+                        ilgili kategoride kaç tane film olduğunu yazdırmak için kullanıldı.
+                         */
+
+                        System.out.println(categoryList.get(userChoice-1)+" kategorisindeki filmler :");
 
                         int count = 0;
 
@@ -142,15 +200,20 @@ public class Main{
                         System.out.println(categoryList.get(userChoice-1)+" kategorisinde "+count+" tane film vardır...");
 
 
-
-
                         break;
 
 
                 case 0:
+                    //while döngüsünün koşulunu bozmak ve programı sonlandırmak için eklendi.
+
                     System.out.println("Çıkış Yapıyorsunuz...");
                     flag = false;
                     input.close();
+                    break;
+
+                default:
+                    System.out.println("Hatalı bir komut girdiniz...");
+                    break;
             }
 
         }while (flag);

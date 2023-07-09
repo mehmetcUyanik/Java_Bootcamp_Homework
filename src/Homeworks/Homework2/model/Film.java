@@ -4,6 +4,16 @@ import java.util.ArrayList;
 
 public class Film {
 
+    /*
+    Film objesi için kullanılacak alanlar tanımlandı. Kategori adı ve platform adı haricindeki alanları kullanıcıdan
+    Scanner ile veri aldıktan sonra oluşturulacak yeni Film objemiz için kullanabilmek için bir Constructor oluşturuldu.
+    Kategori adına ve platform adına erişebilmek için, kategori ve platform objelerini içinde barındaracak iki tane
+    ArrayList oluşturuldu.
+
+    Private alanlara erişim için Getter ve Setter methodları eklendi. Son olarak film objemizi yazdırırken kullanabilmek
+    için "toString" methodu override edildi.
+     */
+
     private String filmName;
     private int year;
     private String director;
@@ -75,7 +85,7 @@ public class Film {
         return platArrayList;
     }
 
-    public void setPlayArrayList(ArrayList<Platform> platArrayList) {
+    public void setPlatArrayList(ArrayList<Platform> platArrayList) {
         this.platArrayList = platArrayList;
     }
 
