@@ -6,6 +6,11 @@ import java.math.BigDecimal;
 
 public class BankAccountService {
 
+    /*
+    BankAccount sınıfı için service oluşturuldu. bankAccount objesini oluşturmak ve fieldları doldurmak için
+    "createBankAccount" methodu oluşturuldu.
+     */
+
     public BankAccount createBankAccount(String name, String iban, BigDecimal amount){
 
         BankAccount bankAccount = new BankAccount();

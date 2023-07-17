@@ -9,6 +9,11 @@ import java.util.Date;
 
 public class ProposalService {
 
+    /*
+    Proposal sınıfı için service oluşturuldu. proposal objesini oluşturmak ve fieldları doldurmak için
+    "createProposal" methodu oluşturuldu.
+     */
+
     public Proposal createProposal(InsuranceCompany company, Vehicle vehicle, BigDecimal offerPrice,
                                    Date startDate, Date endDate, Date expireDate, boolean isApproved, BigDecimal discountPrice){
 

@@ -7,6 +7,11 @@ import java.util.Date;
 
 public class AccidentService {
 
+    /*
+    Accident sınıfı için service oluşturuldu. accident objesini oluşturmak ve fieldları doldurmak için
+    "createAccident" methodu oluşturuldu.
+     */
+
 
     public Accident createAccident(Date accidentDate, String description, BigDecimal damageprice, int faliureRate){
 

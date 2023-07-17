@@ -8,6 +8,11 @@ import java.util.ArrayList;
 
 public class VehicleService {
 
+    /*
+    Vehicle sınıfı için service oluşturuldu. vehicle objesini oluşturmak ve fieldları doldurmak için
+    "createVehicle" ve "addAccidentToVehicle" methodu oluşturuldu.
+     */
+
     public Vehicle createVehicle(String brand, String model, String plate, String chassisNumber,
                                  int modelYear, ColorTypeEnum color){
 

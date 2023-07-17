@@ -6,6 +6,11 @@ import java.util.ArrayList;
 
 public class CustomerService {
 
+    /*
+    Customer sınıfı için service oluşturuldu. customer objesini oluşturmak ve fieldları doldurmak için
+    "createCustomer" ve add methodları oluşturuldu.
+     */
+
 
     public Customer createCustomer(String name, CustomerTypeEnum customerTypeEnum){
 

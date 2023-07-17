@@ -7,7 +7,12 @@ import java.util.ArrayList;
 
 public class InsuranceCompanyService {
 
-    public InsuranceCompany insuranceCompany(String name, String taxOffice, String taxNumber,
+    /*
+    InsuranceCompany sınıfı için service oluşturuldu. insuranceCompany objesini oluşturmak ve fieldları doldurmak için
+    "createInsuranceCompany" ve add methodları oluşturuldu.
+     */
+
+    public InsuranceCompany createInsuranceCompany(String name, String taxOffice, String taxNumber,
                                              String address, BigDecimal commission){
 
         InsuranceCompany insuranceCompany = new InsuranceCompany();

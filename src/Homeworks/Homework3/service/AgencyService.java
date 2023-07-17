@@ -6,6 +6,11 @@ import java.util.ArrayList;
 
 public class AgencyService {
 
+    /*
+    Agency sınıfı için service oluşturuldu. agency objesini oluşturmak ve fieldları doldurmak için
+    "createAgency" ve add methodları oluşturuldu.
+     */
+
     public Agency createAgency( String name ) {
 
         Agency agency = new Agency();

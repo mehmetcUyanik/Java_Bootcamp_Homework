@@ -9,6 +9,11 @@ import java.util.Date;
 
 public class PolicyService {
 
+    /*
+    Policy sınıfı için service oluşturuldu. policy objesini oluşturmak ve fieldları doldurmak için
+    "createPolicy" methodu oluşturuldu.
+     */
+
     public Policy createPolicy(InsuranceCompany insuranceCompany, Vehicle vehicle, BigDecimal price,
                                Date startDate, Date endDate){
 

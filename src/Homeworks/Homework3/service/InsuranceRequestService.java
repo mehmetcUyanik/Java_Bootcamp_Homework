@@ -9,6 +9,11 @@ import java.util.ArrayList;
 
 public class InsuranceRequestService {
 
+    /*
+    InsuranceRequest sınıfı için service oluşturuldu. insuranceRequest objesini oluşturmak ve fieldları doldurmak için
+    "createInsuranceRequest" ve add methodları oluşturuldu.
+     */
+
     public InsuranceRequest createInsuranceRequest(Vehicle vehicle, Policy policy){
 
         InsuranceRequest insuranceRequest = new InsuranceRequest();
