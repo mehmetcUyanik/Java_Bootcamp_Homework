@@ -2,6 +2,13 @@ package Homeworks.Homework4.util;
 
 public class CourseGrade {
 
+    /*
+    CourseGrade nesnesi oluşturmak için gerekli alanlar belirlendi. Ödev içeriğinde belirtilen kısıtlamalara ve
+    yönlendirmelere göre bu alanların uygun şekilde doldurulabilmesi için methodlar yazıldı.
+    Ödevde istenen şekilde constructorlar oluşturuldu.
+    Ödeve uygun bir çıktı alabilmek için toString methodu düzenlendi.
+     */
+
     private String courseDepartment;
     private int courseCode;
     private int courseCredit;

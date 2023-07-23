@@ -11,7 +11,7 @@ public class CourseGradeMain {
         courseGrade.setCourseDepartment("ECE");
         courseGrade.setCourseCredit(3);
         courseGrade.setCourseCredit(7);
-        courseGrade.setGradeTaken(10.2);
+        courseGrade.setGradeTaken(2.5);
         courseGrade.setCourseCode(473);
 
         System.out.println(courseGrade);

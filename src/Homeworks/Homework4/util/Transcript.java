@@ -5,6 +5,12 @@ import java.util.List;
 
 public class Transcript {
 
+    /*
+    Transcript nesnesi oluşturmak için gerekli alanlar belirlendi. Ödev içeriğinde belirtilen kısıtlamalara ve
+    yönlendirmelere göre bu alanların uygun şekilde doldurulabilmesi için methodlar yazıldı. Ödeve uygun
+    bir çıktı alabilmek için toString methodu düzenlendi.
+     */
+
     private int studentID;
 
     private List<CourseGrade> courseGrades;
