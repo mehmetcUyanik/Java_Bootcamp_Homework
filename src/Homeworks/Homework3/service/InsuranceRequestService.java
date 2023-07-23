@@ -14,12 +14,12 @@ public class InsuranceRequestService {
     "createInsuranceRequest" ve add methodları oluşturuldu.
      */
 
-    public InsuranceRequest createInsuranceRequest(Vehicle vehicle, Policy policy){
+    public InsuranceRequest createInsuranceRequest(Vehicle vehicle){
 
         InsuranceRequest insuranceRequest = new InsuranceRequest();
 
         insuranceRequest.setVehicle(vehicle);
-        insuranceRequest.setPolicy(policy);
+
 
         return insuranceRequest;
     }

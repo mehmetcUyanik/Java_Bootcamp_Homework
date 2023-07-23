@@ -3,6 +3,7 @@ package Homeworks.Homework3.service;
 import Homeworks.Homework3.model.Accident;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class AccidentService {
@@ -13,7 +14,7 @@ public class AccidentService {
      */
 
 
-    public Accident createAccident(Date accidentDate, String description, BigDecimal damageprice, int faliureRate){
+    public Accident createAccident(LocalDate accidentDate, String description, BigDecimal damageprice, int faliureRate){
 
         Accident accident = new Accident();
 
@@ -24,4 +25,6 @@ public class AccidentService {
 
         return accident;
     }
+
+
 }

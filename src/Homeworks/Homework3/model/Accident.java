@@ -1,21 +1,30 @@
 package Homeworks.Homework3.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Accident {
-
-    private Date accidentDate;
+    private LocalDate accidentDate;
     private String description;
     private BigDecimal damagePrice;
     private int failureRate;
 
+    public Accident(LocalDate accidentDate, String description, BigDecimal damagePrice, int failureRate) {
+        this.accidentDate = accidentDate;
+        this.description = description;
+        this.damagePrice = damagePrice;
+        this.failureRate = failureRate;
+    }
 
-    public Date getAccidentDate() {
+    public Accident() {
+    }
+
+    public LocalDate getAccidentDate() {
         return accidentDate;
     }
 
-    public void setAccidentDate(Date accidentDate) {
+    public void setAccidentDate(LocalDate accidentDate) {
         this.accidentDate = accidentDate;
     }
 
