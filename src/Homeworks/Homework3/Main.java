@@ -101,10 +101,7 @@ public class Main {
 
         customerService.acceptProposal(customer,proposal1,insuranceRequest,agency,insuranceCompany);
 
-        System.out.println(proposal);
-        System.out.println(customer);
-        System.out.println(agency);
-        System.out.println(insuranceCompany);
+        System.out.println(proposal1);
 
 
 
