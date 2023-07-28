@@ -104,7 +104,7 @@ public class GameService {
     }
 
      /*
-     Birinci raundu kaybeden oyuncuya pokemon listesinden saldırı gücü en düşük pokemon ikinci rauntta kulanması için
+     Birinci raundu kaybeden oyuncuya pokemon listesinden saldırı gücü en düşük pokemon ikinci rauntta kullanması için
      eklendi.
      Birinci raundun kazananına kaybedenin pokemonu eklendi.
     */
