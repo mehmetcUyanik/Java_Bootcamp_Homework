@@ -9,3 +9,5 @@
 ### Ödev 3 -> Sigorta şirketi uygulaması için modellerin ve servislerin oluşturulması.
 
 ### Ödev 4 -> Transcript hesaplama uygulaması.
+
+### Ödev 5 -> Pokemon oyunu.
