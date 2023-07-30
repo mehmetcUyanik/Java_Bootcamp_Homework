@@ -16,38 +16,45 @@ public class CourseGrade {
 
 
     public CourseGrade(String courseDepartment) {
-        this.courseDepartment = setCourseDepartment(courseDepartment);
+        this.setCourseDepartment(courseDepartment);
         this.courseCode = 100;
         this.courseCredit = 4;
         this.gradeTaken = GradeEnum.GRADE_F;
     }
 
     public CourseGrade(String courseDepartment, int courseCode) {
-        this.courseDepartment = setCourseDepartment(courseDepartment);
-        this.courseCode = setCourseCode(courseCode);
+        this.setCourseDepartment(courseDepartment);
+        this.setCourseCode(courseCode);
         this.courseCredit = 4;
         this.gradeTaken = GradeEnum.GRADE_F;
     }
 
     public CourseGrade(String courseDepartment, int courseCode, int courseCredit) {
-        this.courseDepartment = setCourseDepartment(courseDepartment);
-        this.courseCode = setCourseCode(courseCode);
-        this.courseCredit = setCourseCredit(courseCredit);
+        this.setCourseDepartment(courseDepartment);
+        this.setCourseCode(courseCode);
+        this.setCourseCredit(courseCredit);
         this.gradeTaken = GradeEnum.GRADE_F;
     }
 
     public CourseGrade(String courseDepartment, int courseCode, int courseCredit, GradeEnum gradeTaken) {
-        this.courseDepartment = setCourseDepartment(courseDepartment);
-        this.courseCode = setCourseCode(courseCode);
-        this.courseCredit = setCourseCredit(courseCredit);
-        this.gradeTaken = setGradeTaken(gradeTaken);
+        this.setCourseDepartment(courseDepartment);
+        this.setCourseCode(courseCode);
+        this.setCourseCredit(courseCredit);
+        this.setGradeTaken(gradeTaken);
+    }
+
+    public CourseGrade(String courseDepartment, int courseCode, int courseCredit, double gradeTaken) {
+        this.setCourseDepartment(courseDepartment);
+        this.setCourseCode(courseCode);
+        this.setCourseCredit(courseCredit);
+        this.setGradeTaken(gradeTaken);
     }
 
     public String getCourseDepartment() {
         return courseDepartment;
     }
 
-    public String setCourseDepartment(String courseDepartment) {
+    public void setCourseDepartment(String courseDepartment) {
 
         if(courseDepartment.equals("CENG") ||
                 courseDepartment.equals("COMP") ||
@@ -60,14 +67,13 @@ public class CourseGrade {
             this.courseDepartment = "CENG";
         }
 
-        return this.courseDepartment;
     }
 
     public int getCourseCode() {
         return courseCode;
     }
 
-    public int setCourseCode(int courseCode) {
+    public void setCourseCode(int courseCode) {
 
         if (courseCode >= 100 && courseCode <= 599){
             this.courseCode = courseCode;
@@ -75,21 +81,19 @@ public class CourseGrade {
             this.courseCode = 100;
         }
 
-        return this.courseCode;
     }
 
     public int getCourseCredit() {
         return courseCredit;
     }
 
-    public int setCourseCredit(int courseCredit) {
+    public void setCourseCredit(int courseCredit) {
         if (courseCredit == 3 || courseCredit ==4){
             this.courseCredit = courseCredit;
         }else{
             this.courseCredit = 4;
         }
 
-        return this.courseCredit;
 
     }
 
@@ -97,7 +101,7 @@ public class CourseGrade {
         return gradeTaken;
     }
 
-    public GradeEnum setGradeTaken(GradeEnum gradeTaken) {
+    public void setGradeTaken(GradeEnum gradeTaken) {
         for (GradeEnum grades : GradeEnum.values()){
             if (gradeTaken==grades){
                 this.gradeTaken = gradeTaken;
@@ -106,10 +110,10 @@ public class CourseGrade {
                 this.gradeTaken = GradeEnum.GRADE_F;
             }
         }
-        return this.gradeTaken;
+
     }
 
-    public GradeEnum setGradeTaken(double val) {
+    public void setGradeTaken(double val) {
         if (val >= 0 && val<=4){
             int gradeValue = (int) Math.round(val);
             if (gradeValue == 4){
@@ -127,7 +131,6 @@ public class CourseGrade {
         }else {
             this.gradeTaken = GradeEnum.GRADE_F;
         }
-        return this.gradeTaken;
     }
 
     @Override
